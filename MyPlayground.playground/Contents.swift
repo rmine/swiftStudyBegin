@@ -10,6 +10,8 @@ let applesum = "I have \(apples) apples"
 let fruits = "I have \(apples + oranges) fruits"
 
 let tmpArray = [1,2,3,4,5]
+print(tmpArray.endIndex)
+print(tmpArray.startIndex)
 var initNum = 0
 for i in tmpArray
 {
@@ -254,9 +256,24 @@ case let .Error(error):
 }
 
 
-protocol FullNamed {
-    var fullName: String
-}
-struct Person: Full{
-    
-}
+var letters = Set<Character>()
+print("letters is of type Set<Character> with \(letters.count) items.")
+
+letters.insert("a")
+print(letters)
+
+
+let normal = "Could you help me, please?"
+let upcase = "COULD YOU HELP ME, PLEASE?"
+print(normal == upcase)
+
+let houseAnimals: Set = ["🐶", "🐱"]
+let farmAnimals: Set = ["🐮", "🐔", "🐑", "🐶", "🐱"]
+let cityAnimals: Set = ["🐦", "🐭"]
+
+houseAnimals.isSubsetOf(farmAnimals)
+farmAnimals.isSupersetOf(houseAnimals)
+farmAnimals.isDisjointWith(cityAnimals)
+
+
+
