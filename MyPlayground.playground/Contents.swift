@@ -276,4 +276,10 @@ farmAnimals.isSupersetOf(houseAnimals)
 farmAnimals.isDisjointWith(cityAnimals)
 
 
+var favoriteGenres: Set = ["Rock", "Classical", "Hip hop"]
+for ff in favoriteGenres {
+    print(ff)
+    print(ff.hashValue)
+}
+
 
