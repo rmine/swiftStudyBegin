@@ -283,3 +283,46 @@ for ff in favoriteGenres {
 }
 
 
+let somePoint = (1, 1)
+switch somePoint {
+case (0, 0):
+    println("(0, 0) is at the origin")
+case (_, 0):
+    println("(\(somePoint.0), 0) is on the x-axis")
+case (0, _):
+    println("(0, \(somePoint.1)) is on the y-axis")
+case (-2...2, -2...2):
+    println("(\(somePoint.0), \(somePoint.1)) is inside the box")
+default:
+    println("(\(somePoint.0), \(somePoint.1)) is outside of the box")
+}
+
+let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+func backwards(s1: String, s2: String) -> Bool {
+    return s1 > s2
+}
+var reversed = sorted(names, backwards)
+var reversed2 = sorted(names, { (s1: String, s2: String) -> Bool in return s1 > s2 } )
+var reversed3 = sorted(names, { $0 > $1 } )
+print(reversed3)
+
+let digitNames = [
+    0: "Zero", 1: "One", 2: "Two",   3: "Three", 4: "Four",
+    5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"
+]
+let numbers = [16, 58, 510]
+
+let strings = numbers.map{
+    (var number) -> String in
+    var output = ""
+    print(number)
+    while( number > 0){
+        output = output + digitNames[number % 10 ]!
+        number /= 10
+    }
+    return output
+}
+print(strings)
+
+
+
